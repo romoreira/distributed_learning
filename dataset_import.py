@@ -23,6 +23,7 @@ images, labels = next(img_gen.flow_from_directory(directory))
 #print("images: "+str(images))
 #print("labels: "+str(labels))
 
+
 ds = tf.data.Dataset.from_generator(
     lambda: img_gen.flow_from_directory(directory),
     output_types=(tf.float32, tf.float32),
