@@ -7,6 +7,7 @@ import numpy as np
 import tensorflow_federated as tff
 import tensorflow_datasets as tfds
 
+
 np.set_printoptions(precision=4)
 
 directory = "/home/rodrigo/PycharmProjects/distributed_learning/dataset/"
@@ -37,9 +38,10 @@ for images, label in ds.take(1):
 
 print("ds: "+str(ds))
 
-sampled_client_ids = [1, 2, 3, 4]
+path_to_downloaded_file = tf.keras.utils.get_file(
+    "flower_photos",
+    "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz",
+    untar=True)
+print(path_to_downloaded_file)
 
-for client_id in sampled_client_ids[:5]:
-    client_local_dataset = ds.create_tf_dataset_for_client(client_id)
-    for example in client_local_dataset:
-        print(example)
+tf.data.Dataset.list_files()
