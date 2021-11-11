@@ -38,6 +38,7 @@ for images, label in ds.take(1):
 
 print("ds: "+str(ds))
 
+
 path_to_downloaded_file = tf.keras.utils.get_file(
     "flower_photos",
     "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz",
