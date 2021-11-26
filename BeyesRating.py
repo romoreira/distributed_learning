@@ -35,7 +35,7 @@ for i in range(len(movies)):
 
     print(f"{movies[i]['name']}  {movies[i]['up']}:{movies[i]['down']} rank: {rank:0.2f}")
 
-axes.grid(b=None, which='major', axis='both')
+axes.grid(visible=None, which='major', axis='both')
 
 if a0 > 5:
     axes.set_xlim(0.2, 0.8)
